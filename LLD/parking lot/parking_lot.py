@@ -20,7 +20,9 @@ class ParkingLot:
                         #a way to get the single instance of the class before any instance exists.
         if ParkingLot._instance is None: #When an instance is requested, check if one has already been created
             ParkingLot()                 #or not. If not, create one and return the instance.
-            return ParkingLot._instance                            
+            return ParkingLot._instance   
+        else:
+            raise Exception("This class is a singleton!")                          
 
     def add_level(self, level: Level):
         self.levels.append(level)
