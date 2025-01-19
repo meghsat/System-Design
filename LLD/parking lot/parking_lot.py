@@ -12,7 +12,8 @@ class ParkingLot:
         if ParkingLot._instance is not None: #directly after the first creation will raise an exception.
             raise Exception("This is a Singleton class and there already exists an instance of this class")
         else:
-            ParkingLot._instance = self #assigning the current object to _instance.
+            ParkingLot._instance = self #assigning the current object to _instance. Now, both are pointing to the same 
+                                        #memory, so if we do anychanges to self then _instance will also get affected.
             self.levels:List[Level]=[] #levels is a list of type level
     
     @staticmethod #made static because it needs to be called without an instance of the class. This is crucial
